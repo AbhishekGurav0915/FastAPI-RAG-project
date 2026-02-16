@@ -1,0 +1,39 @@
+# Python & virtual environments (NEVER commit)
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Vector / embedding data (very large!)
+chroma_db/
+qdrant_storage/
+vector_store/
+.cache/huggingface/
+.huggingface/
+
+# Environment secrets
+.env
+.env.*
+*.env
+
+# Temp / upload folders
+temp/
+uploads/
+*.tmp
+
+# Large binaries (extra safety)
+*.dll
+*.pyd
+*.so
+*.exe
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/

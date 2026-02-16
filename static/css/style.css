@@ -1,0 +1,10 @@
+body { font-family: system-ui, sans-serif; background: #f8f9fa; margin: 0; padding: 20px; }
+.container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+h1, h2 { text-align: center; }
+form { display: flex; gap: 10px; margin: 15px 0; }
+input[type="file"], input[type="text"] { flex: 1; padding: 10px; }
+button { padding: 10px 20px; background: #0066ff; color: white; border: none; border-radius: 6px; cursor: pointer; }
+#messages { min-height: 200px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 10px; background: #f9f9f9; }
+.message { margin: 10px 0; padding: 10px; border-radius: 8px; }
+.user { background: #e3f2fd; text-align: right; }
+.bot { background: #f1f8e9; }

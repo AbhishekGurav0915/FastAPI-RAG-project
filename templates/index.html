@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF RAG Demo</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 PDF RAG (Docling + e5 + Qdrant)</h1>
+
+        <section>
+            <h2>1. Upload PDF</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="pdfFile" accept=".pdf" required>
+                <button type="submit">Upload & Process</button>
+            </form>
+            <p id="uploadStatus"></p>
+        </section>
+
+        <section>
+            <h2>2. Ask questions</h2>
+            <div id="chat">
+                <div id="messages"></div>
+                <form id="queryForm">
+                    <input type="text" id="question" placeholder="Ask anything about the PDF..." required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
