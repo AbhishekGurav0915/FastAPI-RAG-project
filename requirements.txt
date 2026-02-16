@@ -33,3 +33,7 @@ chromadb>=0.5.0
 
 # Optional
 pandas
+
+langchain-postgres
+pgvector
+psycopg[binary]
