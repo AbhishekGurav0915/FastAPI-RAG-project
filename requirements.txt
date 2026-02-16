@@ -4,36 +4,32 @@ uvicorn[standard]
 python-multipart>=0.0.18
 python-dotenv
 
-# Templating
+# Templating & static
 jinja2
 
-# LangChain family (loose but recent stable)
-langchain>=0.3.0
-langchain-core>=0.3.0
-langchain-community>=0.3.0
+# LangChain core + integrations
+langchain>=0.3.0,<0.4.0
+langchain-core>=0.3.0,<0.4.0
+langchain-community>=0.3.0,<0.4.0
 langchain-huggingface>=0.1.0
 langchain-groq>=0.2.0
-langchain-google-genai>=2.0.0
-langchain-chroma>=0.2.0
+langchain-google-genai>=1.0.0,<2.0.0
+langchain-text-splitters>=0.3.0
+
 # Embeddings
 sentence-transformers>=3.0.0
 huggingface-hub>=0.25.0
 
-# Qdrant - let pip take latest compatible (1.10+)
-qdrant-client>=1.10.0
+# Supabase pgvector (current backend)
+langchain-postgres>=0.1.0
+pgvector>=0.3.0
+psycopg[binary]>=3.2.0
 
-# PDF - reliable
+# PDF loader
 pymupdf>=1.24.0
 
-# Google direct
+# Google generative AI (direct fallback)
 google-generativeai>=0.8.0
 
-# ... other packages as before
-chromadb>=0.5.0
-
-# Optional
+# Optional / utilities
 pandas
-
-langchain-postgres
-pgvector
-psycopg[binary]
