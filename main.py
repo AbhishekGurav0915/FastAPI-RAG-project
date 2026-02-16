@@ -4,8 +4,22 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import os
 import tempfile
+import sys
 
 from rag import ingest_document, query_document
+
+print("===== MAIN.PY STARTUP DEBUG =====", file=sys.stderr)
+print("Python version:", sys.version, file=sys.stderr)
+print("Current working dir:", os.getcwd(), file=sys.stderr)
+print("DATABASE_URL exists?", "DATABASE_URL" in os.environ, file=sys.stderr)
+print("GEMINI_API_KEY exists?", "GEMINI_API_KEY" in os.environ, file=sys.stderr)
+print("Trying to import rag...", file=sys.stderr)
+try:
+    print("rag imported successfully", file=sys.stderr)
+except Exception as e:
+    print("Failed to import rag:", str(e), file=sys.stderr)
+    raise
+print("===== END STARTUP DEBUG =====", file=sys.stderr)
 
 app = FastAPI(title="Simple PDF RAG")
 
@@ -30,10 +44,16 @@ async def upload_pdf(file: UploadFile = File(...)):
     try:
         ingest_document(tmp_path)
         return {"message": "PDF processed successfully! You can now ask questions."}
+    except Exception as e:
+        return {"error": str(e)}
     finally:
-        os.unlink(tmp_path)   # clean up
+        if os.path.exists(tmp_path):
+            os.unlink(tmp_path)  # clean up
 
 @app.post("/query")
 async def ask(question: str = Form(...)):
-    answer = query_document(question)
-    return {"answer": answer}
+    try:
+        answer = query_document(question)
+        return {"answer": answer}
+    except Exception as e:
+        return {"error": str(e)}
