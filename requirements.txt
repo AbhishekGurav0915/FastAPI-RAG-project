@@ -20,7 +20,7 @@ langchain-google-genai>=1.0.0
 sentence-transformers>=3.0.0
 huggingface-hub>=0.25.0
 
-# Supabase pgvector
+# Supabase pgvector (current backend)
 langchain-postgres==0.0.16
 pgvector>=0.3.0
 psycopg[binary]>=3.2.0
@@ -28,7 +28,7 @@ psycopg[binary]>=3.2.0
 # PDF loader
 pymupdf>=1.24.0
 
-# Google generative AI
+# Google generative AI (direct fallback)
 google-generativeai>=0.7.0,<0.8.0
 
 # Optional utilities
