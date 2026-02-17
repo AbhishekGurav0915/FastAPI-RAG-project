@@ -1,35 +1,32 @@
 # FastAPI & server
-fastapi>=0.115.0
-uvicorn[standard]
-python-multipart>=0.0.18
-python-dotenv
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.18
+python-dotenv==1.0.1
 
-# Templating & static
-jinja2
+# Templating
+jinja2==3.1.4
 
-# LangChain core + integrations (loosen upper bound to resolve conflict)
-langchain>=0.3.0
-langchain-core>=0.3.0
-langchain-community>=0.3.0
-langchain-text-splitters>=0.3.0
-langchain-huggingface>=0.1.0
-langchain-groq>=0.2.0
-langchain-google-genai>=1.0.0
+# LangChain Ecosystem (Pinned for compatibility)
+langchain==0.3.7
+langchain-core==0.3.15
+langchain-community==0.3.5
+langchain-text-splitters==0.3.2
+langchain-huggingface==0.1.1
+langchain-groq==0.2.1
+langchain-google-genai==2.0.4
 
-# Embeddings
-sentence-transformers>=3.0.0
-huggingface-hub>=0.25.0
+# Database & Vector Store
+# Note: langchain-postgres 0.0.12+ is the stable transition point
+langchain-postgres==0.0.12
+pgvector==0.3.6
+psycopg[binary]==3.2.3
 
-# Supabase pgvector (current backend)
-langchain-postgres==0.0.16
-pgvector>=0.3.0
-psycopg[binary]>=3.2.0
+# Embeddings & PDF
+sentence-transformers==3.2.1
+huggingface-hub==0.26.2
+pymupdf==1.24.13
 
-# PDF loader
-pymupdf>=1.24.0
-
-# Google generative AI (direct fallback)
-google-generativeai>=0.7.0,<0.8.0
-
-# Optional utilities
-pandas
+# LLM SDKs
+google-generativeai==0.8.3
+groq==0.11.0
